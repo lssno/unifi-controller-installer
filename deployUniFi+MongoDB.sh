@@ -58,4 +58,4 @@ tar -xzf "$MONGO_PACK" -C "$DEPLOY_PATH"
 # Adjusting links
 echo -e "\nAdjusting links"
 echo -e "$MONGO_ROOT/bin/mongod ==> $DEPLOY_PATH/UniFi/bin/mongod"
-ln -sf "$MONGO_ROOT/bin/mongod/bin/mongod" "$UNIFI_ROOT/UniFi/bin/mongod"
+ln -sf "$MONGO_ROOT/bin/mongod" "$UNIFI_ROOT/UniFi/bin/mongod"
