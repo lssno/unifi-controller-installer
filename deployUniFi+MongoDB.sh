@@ -3,6 +3,7 @@
 #  deployUniFi+MongoDB.sh
 #
 #  Copyleft 2017 Alysson Oliveira <lssn.oliveira@gmail.com>
+#
 #  This program is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation, either version 3 of the License, or
@@ -35,8 +36,9 @@ MONGO_VER="3.4.6"
 # Define paths
 DOWNLOAD_PATH="/tmp"
 DEPLOY_PATH="/opt/UniFi_Controller"
-MONGO_ROOT="$DEPLOY_PATH"/mongodb-linux-x86_64-"$MONGO_VER"
 UNIFI_ROOT="$DEPLOY_PATH"/UniFi-"$UNIFI_VER"
+MONGO_ROOT="$UNIFI_ROOT"/mongodb-linux-x86_64-"$MONGO_VER"
+
 
 # Define software package names
 UNIFI_PACK="$DOWNLOAD_PATH"/UniFi.unix."$UNIFI_VER".zip
@@ -53,7 +55,7 @@ echo -e "\nExtracting files"
 echo -e "\n\t Extracting $UNIFI_PACK"
 unzip -q "$UNIFI_PACK" -d "$UNIFI_ROOT"
 echo -e "\n\t Extracting $MONGO_PACK"
-tar -xzf "$MONGO_PACK" -C "$DEPLOY_PATH"
+tar -xzf "$MONGO_PACK" -C "$UNIFI_ROOT"
 
 # Adjusting links
 echo -e "\nAdjusting links"
