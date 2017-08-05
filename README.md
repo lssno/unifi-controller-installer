@@ -16,6 +16,7 @@ mongodb-linux-x86_64-3.4.6  UniFi-5.4.19
 ```
 5. Just start UniFi Controller
 ```
-java -jar UniFi-5.4.19/UniFi/lib/ace.jar 
+cd /opt/UniFi_Controller/UniFi
+java -jar lib/ace.jar start
 ```
 6. It is done!
